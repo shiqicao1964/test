@@ -33,3 +33,12 @@ pos_traj_y = radius * np.cos(angle_points)
 pos_traj_z = np.ones_like(pos_traj_x) * z
 vel_traj_x = anglevel_points * radius * np.cos(angle_points)
 vel_traj_y = anglevel_points * radius * np.sin(angle_points)
+
+ref = np.zeros((vel_traj_x.shape[0],12))
+ref[::,0] = pos_traj_x
+ref[::,1] = pos_traj_y
+ref[::,2] = pos_traj_z
+ref[::,6] = vel_traj_x
+ref[::,7] = vel_traj_y
+
+ref[0:20]
